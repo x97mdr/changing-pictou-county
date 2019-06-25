@@ -1,4 +1,4 @@
-changing-pc
+changing-pictou-county
 ==============================
 
 An examination of the changing population of Pictou County through publicly available data sets

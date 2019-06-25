@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# changing-pc documentation build configuration file, created by
+# changing-pictou-county documentation build configuration file, created by
 # sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -41,7 +41,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'changing-pc'
+project = u'changing-pictou-county'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -164,7 +164,7 @@ html_static_path = ['_static']
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'changing-pcdoc'
+htmlhelp_basename = 'changing-pictou-countydoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -184,8 +184,8 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
     ('index',
-     'changing-pc.tex',
-     u'changing-pc Documentation',
+     'changing-pictou-county.tex',
+     u'changing-pictou-county Documentation',
      u"Jeffrey Cameron", 'manual'),
 ]
 
@@ -215,7 +215,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'changing-pc', u'changing-pc Documentation',
+    ('index', 'changing-pictou-county', u'changing-pictou-county Documentation',
      [u"Jeffrey Cameron"], 1)
 ]
 
@@ -229,8 +229,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'changing-pc', u'changing-pc Documentation',
-     u"Jeffrey Cameron", 'changing-pc',
+    ('index', 'changing-pictou-county', u'changing-pictou-county Documentation',
+     u"Jeffrey Cameron", 'changing-pictou-county',
      'An examination of the changing population of Pictou County through publicly available data sets', 'Miscellaneous'),
 ]
 

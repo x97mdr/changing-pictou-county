@@ -1,9 +1,9 @@
-.. changing-pc documentation master file, created by
+.. changing-pictou-county documentation master file, created by
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-changing-pc documentation!
+changing-pictou-county documentation!
 ==============================================
 
 Contents:
