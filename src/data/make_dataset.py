@@ -3,6 +3,7 @@ import click
 import logging
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
+from import_census_datasets import get_census_1991_to_2016_pictou_county
 
 
 @click.command()
@@ -14,6 +15,8 @@ def main(input_filepath, output_filepath):
     """
     logger = logging.getLogger(__name__)
     logger.info('making final data set from raw data')
+    df = get_census_1991_to_2016_pictou_county()
+    df.to_pickle("{0}/census_1991_to_2016_pictou_county.pickle".format(output_filepath))
 
 
 if __name__ == '__main__':
