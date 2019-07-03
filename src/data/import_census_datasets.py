@@ -12,6 +12,36 @@ COLUMN_RENAMES = {
     "  Male": "Male",
 }
 
+AGE_RENAMES = {
+    "Under 1 year": "0",
+    "Under 1": "0",
+    "under 1": "0",
+    "90\+": "90",
+    "90 and over": "90",
+    "100\+": "100",
+}
+
+AGE_GROUP_BINS = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 105]
+AGE_GROUP_LABELS = [
+    "0-4",
+    "5-9",
+    "10-14",
+    "15-19",
+    "20-24",
+    "25-29",
+    "30-34",
+    "35-39",
+    "40-44",
+    "45-49",
+    "50-54",
+    "55-59",
+    "60-64",
+    "65-69",
+    "70-74",
+    "75-79",
+    "80+",
+]
+
 
 def _get_census_1991_pictou_county():
     path = "https://www12.statcan.gc.ca/English/census91/data/tables/File.cfm?S=0&LANG=E&A=R&PID=71935&GID=3503&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0&OFT=CSV"
@@ -21,7 +51,6 @@ def _get_census_1991_pictou_county():
     df.drop(df.index[0], inplace=True)
     df = df[~df.Age.str.contains("years")]
     df.drop(df.tail(2).index, inplace=True)
-    df.replace(to_replace="Under 1", value=0, inplace=True)
     df["Year"] = 1991
     df.reset_index(inplace=True, drop=True)
     return df
@@ -100,4 +129,9 @@ def get_census_1991_to_2016_pictou_county():
     df2011 = _get_census_2011_pictou_county()
     df2016 = _get_census_2016_pictou_county()
     df = pd.concat([df1991, df1996, df2001, df2006, df2011, df2016], sort=True)
+    df.replace({"Age": AGE_RENAMES}, regex=True, inplace=True)
+    df["Age"] = pd.to_numeric(df.Age)
+    df["AgeGroup"] = pd.cut(
+        df.Age, bins=AGE_GROUP_BINS, labels=AGE_GROUP_LABELS, include_lowest=True
+    )
     return df
